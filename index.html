@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Simon Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton+SC&family=Audiowide&family=Fondamento:ital@0;1&family=Kaushan+Script&family=Platypi:ital,wght@1,300..800&family=Play:wght@400;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton+SC&family=Audiowide&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Fondamento:ital@0;1&family=Kaushan+Script&family=Platypi:ital,wght@1,300..800&family=Play:wght@400;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+  <div id="instructions-overlay">
+    <div id="instructions">
+      <h1>Simon Game</h1>
+      <h2>How to Play !!!</h2> 
+      <div class="instruction-container">
+        <ul> 
+          <li>Watch the sequence of colors lighting up.</li> 
+          <li>Repeat the sequence by clicking the buttons in order.</li> 
+          <li>If correct, a new color is added, lighten up in the next round.</li> 
+          <li>The sequence gets longer and complex with each level.</li> 
+          <li>One mistake ends the game.</li> 
+
+          <p>This game boosts memory and focus while enhancing brain adaptability and muscle memory.</p>
+        </ul>
+
+        
+
+        <video id="instruction-video"  controls>
+          <source src="videos/Instruction.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+  
+      </div>
+        <button id="close-overlay">Close</button>
+        <button id="instruction-video-button">Instruction Video</button>
+    </div>
+  </div>
+
+  <h1 id="level-title">Press a Key or Tap 'Start' to Begin</h1>
+  <button id="start-button">Start Game</button>
+  <div class="container">
+    <div lass="row">
+
+      <div type="button" id="green" class="btn green">
+
+      </div>
+
+      <div type="button" id="red" class="btn red">
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div type="button" id="yellow" class="btn yellow">
+
+      </div>
+      <div type="button" id="blue" class="btn blue">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+body {
+  text-align: center;
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #ffffff 0%, #1b2845 74%);
+  z-index: 1;
+  min-height: 97vh;
+  overflow: hidden;
+}
+
+#instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+#instructions {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  background: #edf2f4;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#instructions ul li{
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+#instructions ul li, h1, h2, p{
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
+
+}
+
+.instruction-container{
+  display: flex;
+  gap: 10px;
+}
+
+#instruction-video-button{
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: #a8adb3;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+#instruction-video{
+  width: 320px;
+  height: 200px;
+  border-radius: 7px;
+  margin-left: 20px;
+  display: none;
+  object-fit: cover;
+}
+
+#close-overlay{
+  background-color: #a3aab1;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-top: 10px;
+  
+}
+
+/* Base button style */
+#start-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  background-color: #A7A76A; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  animation: bounce 2s infinite;
+  
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* Hover effect */
+#start-button:hover {
+  background-color: #c9c94d;
+}
+
+/* Active effect */
+#start-button:active {
+  background-color: #a0a058; /* Even darker green */
+  transform: scale(1); /* Reset size */
+}
+
+#start-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  pointer-events: none; 
+}
+
+
+#level-title {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  margin: 4%;
+  margin-top: 1%;
+  color: #f4c017;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 4px;
+}
+
+.container {
+  display: inline-block;
+  width: 600px;
+  height: 520px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.btn {
+  display: inline-block;
+  height: 170px;
+  width: 185px;
+  border-radius: 30%;
+  padding: 10px;
+  margin: 12px;
+  margin-left: 20px;
+  border: 2px solid black;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Shadow with offset and blur */
+}
+
+.game-over {
+  background-color: red;
+  background-image: linear-gradient(315deg, #8a8383 0%, #e63535 74%);
+  opacity: 0.8;
+  z-index: 4;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 25px white;
+  background-color: grey;
+}
+
+/* CSS rules for devices with a max width of 600px, typically phones */
+
+@media screen and (max-width: 600px) {
+  body{
+    background-size: 160% 160%;
+  }
+
+  #level-title {
+    margin-top: 25%;
+    font-size: 3rem;
+    width: 570px;
+  }
+
+  .container{
+    margin-top: 30%;
+  }
+
+  #instructions-overlay{
+    width: 100%;
+    height: 100%;
+  }
+
+  #instructions{
+    width: 450px;
+    height: 380px;
+    font-size: 0.8rem;
+  }
+
+  #close-overlay , #instruction-video-button{
+    padding: 5px 14px;
+    margin-top: 20px;
+  }
+
+  #start-button{
+    margin-top: 40px;
+    margin-left: 210px;
+    margin-bottom: 5px;
+    font-size: 1.0em;
+  }
+
+}
+
+/* CSS rules for devices with a width in between 768px-1024px, typically ipads */
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  body{
+    background-size: 145% 140%;
+    height: 90vh;
+  }
+
+  #level-title{
+    margin-top: 10%;
+  }
+
+  .container{
+    margin-top: 15%;
+  }
+}
+
